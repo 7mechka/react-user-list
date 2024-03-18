@@ -34,7 +34,7 @@ function UserInfo() {
           </div>
           <div className="info__right">
             <p className="info__btn" onClick={() => setActive()}>
-              {"More info \\/"}
+              {isActive ? 'Less Info /\\' : 'More Info \\/'}
             </p>
             <ul className={`info__list ${isActive ? "active" : ""}`}>
               <li className="info__item">
