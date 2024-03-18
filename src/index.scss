@@ -70,6 +70,9 @@ button:focus-visible {
   max-width: 700px;
   width: 100%;
   margin: 0 auto;
+  &:first-child {
+    margin-top: 30px;
+  }
 }
 .post__card {
   border: 1px solid #eee;
@@ -99,4 +102,61 @@ button:focus-visible {
   height: 30px;
   border-radius: 8px;
   text-align: center;
+}
+p {
+  margin: 0;
+  padding: 0;
+}
+.info {
+  display: flex;
+  justify-content: space-between;
+  background: #eee;
+  border-radius: 20px;
+  padding: 20px;
+  color: #242424;
+  &__left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    white-space: nowrap;
+  }
+  &__right {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+  }
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: .5s;
+  }
+  &__btn {
+    color: #535bf2;
+    cursor: pointer;
+    &:hover {
+      color: #393ea7;
+      transition: .8s;
+    }
+  }
+  &__page-redirect {
+    white-space: nowrap;
+  }
+}
+.active {
+  opacity: 1;
+}
+.NotFound {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: red;
 }

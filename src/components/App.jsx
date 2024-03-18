@@ -1,6 +1,4 @@
 import { useState } from "react";
-import AppButton from "./AppButton";
-import PostCard from "./PostCard";
 import LoginBlock from "./LoginBlock";
 
 function App() {
@@ -23,9 +21,9 @@ function App() {
   return (
     <>
       <LoginBlock callback={changeLoggedStatus}/>
-      {isLogged && 
-      <PostCard content={posts}/>
-      }
+      {/* {isLogged && 
+      <UserInfo/>
+      } */}
     </>
   );
 }

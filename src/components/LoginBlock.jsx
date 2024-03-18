@@ -1,9 +1,11 @@
 import { useState } from "react";
 import AppButton from "./AppButton";
+import { Navigate } from "react-router-dom";
 
 function LoginBlock({ callback }) {
   let [isLogin, setIsLogin] = useState(false);
   let [userList, setUserList] = useState([]);
+  let [userId, setUserId] = useState();
 
   function changeLoginStatus() {
     setIsLogin((isLogin = !isLogin));
@@ -19,11 +21,15 @@ function LoginBlock({ callback }) {
 
   function checkData(array) {
     if (
-      userList.find(
-        (item) =>
+      userList.find((item) => {
+        if (
           array.login.value === item.name &&
           array.password.value === item.username
-      )
+        ) {
+          setUserId((userId = item.id));
+          return true;
+        }
+      })
     ) {
       changeLoginStatus();
     } else {
@@ -54,14 +60,15 @@ function LoginBlock({ callback }) {
       )}
       {isLogin && (
         <>
-          <form
+          <Navigate to={`/user/${userId}`} />
+          {/* <form
             onSubmit={() => {
               event.preventDefault();
               changeLoginStatus();
             }}
           >
             <AppButton text={"Exit"} />
-          </form>
+          </form> */}
         </>
       )}
     </div>
